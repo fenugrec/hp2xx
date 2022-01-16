@@ -160,6 +160,14 @@ copies.
 #include "hpgl.h"
 
 
+/** Global vars
+*/
+unsigned char pattern[8][256][256];
+int pat;
+int pw[8];
+int ph[8];
+
+
 /**
  ** When adding your special mode, add a line here.
  ** Please note the alphabetical order (and keep it).

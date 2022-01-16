@@ -323,10 +323,12 @@ typedef struct {
 	int rect;
 } PE_flags;
 
-unsigned char pattern[8][256][256];
-int pat;
-int pw[8];
-int ph[8];
+/** some global vars, defined in hp2xx.c */
+extern unsigned char pattern[8][256][256];
+extern int pat;
+extern int pw[8];
+extern int ph[8];
+
 #define	DEFAULT_PEN_NO		1
 
 #define	FLAGSTATE(flag)		(flag) ? "ON" : "off"
