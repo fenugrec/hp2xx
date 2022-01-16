@@ -25,6 +25,12 @@ AC_TYPE_SSIZE_T
 # Checks for library functions.
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
-AC_CHECK_FUNCS([floor isascii memset rint sqrt strchr strerror strrchr strstr])
+
+# math.h : floor, rint, sqrt... Can we assume a C99-compliant math library and just check for just one of these.
+# AC_SEARCH_LIBS can accept multiple extra libs to search, if the default env doesn't provide the given func.
+AC_SEARCH_LIBS(sqrt, m,,AC_MSG_ERROR([problem finding C math lib]))
+
+#this one is not in standard C
+AC_SEARCH_LIBS(isascii,,,AC_MSG_ERROR([isascii() not found]))
 
 AC_OUTPUT
