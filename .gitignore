@@ -1,3 +1,4 @@
+build/
 configure
 *.in
 autom4te.cache
