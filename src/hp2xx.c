@@ -153,7 +153,7 @@ copies.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
+//#include <ctype.h>
 #include "bresnham.h"
 #include "pendef.h"
 #include "hp2xx.h"
@@ -602,7 +602,7 @@ void autoset_outfile_name(const char *mode, const char *in_name,
 	if (**outfile == '-')	/* If output explicitly to stdout:          */
 		return;		/*    then nothing's to do here                 */
 
-	if (isascii(**outfile) && strlen(*outfile) > 0) {	/* If this looks like an output file name:     */
+	if (strlen(*outfile) > 0) {	/* If this looks like an output file name:     */
 		return;		/*    Just accept it! Add validity check later? */
 	}
 	if (*in_name == '-')	/* If input from stdin                              */

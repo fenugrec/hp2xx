@@ -30,7 +30,4 @@ AC_FUNC_REALLOC
 # AC_SEARCH_LIBS can accept multiple extra libs to search, if the default env doesn't provide the given func.
 AC_SEARCH_LIBS(sqrt, m,,AC_MSG_ERROR([problem finding C math lib]))
 
-#this one is not in standard C
-AC_SEARCH_LIBS(isascii,,,AC_MSG_ERROR([isascii() not found]))
-
 AC_OUTPUT
