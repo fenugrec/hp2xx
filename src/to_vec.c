@@ -515,7 +515,7 @@ int to_mftex(const GEN_PAR * pg, const OUT_PAR * po, int mode)
 			pensize = pt.width[pen_no];
 			if (pensize != 0.) {
 				if (chars_out) {	/* Finish up old polygon */
-					fprintf(md, poly_end);
+					fprintf(md, "%s", poly_end);
 					chars_out = 0;
 				}
 				switch (mode) {
@@ -579,7 +579,7 @@ int to_mftex(const GEN_PAR * pg, const OUT_PAR * po, int mode)
 			    || mode == 7)
 				break;
 			if (chars_out)	/* Finish up old polygon */
-				fprintf(md, poly_end);
+				fprintf(md, "%s", poly_end);
 			if (mode == 8)
 				pt1.y = po->ymax - pt1.y;
 
@@ -851,7 +851,7 @@ if (mflag==0) fprintf(stderr,"diagonal move,no marker\n");
 		case PLOT_AT:
 			HPGL_Pt_from_tmpfile(&pt1);
 			if (chars_out) {	/* Finish up old polygon */
-				fprintf(md, poly_end);
+				fprintf(md, "%s", poly_end);
 				chars_out = 0;
 			}
 			if (pensize == 0)
@@ -902,7 +902,7 @@ if (mflag==0) fprintf(stderr,"diagonal move,no marker\n");
 
 
 	if (chars_out) {	/* Finish up old polygon */
-		fprintf(md, poly_end);
+		fprintf(md, "%s", poly_end);
 		chars_out = 0;
 	}
 #ifdef ATARI
@@ -910,7 +910,7 @@ if (mflag==0) fprintf(stderr,"diagonal move,no marker\n");
 		fprintf(csfile, exit_cmd);
 	else
 #endif
-		fprintf(md, exit_cmd);	/* Add file trailer     */
+		fprintf(md, "%s", exit_cmd);	/* Add file trailer     */
 
 
       MF_exit:
