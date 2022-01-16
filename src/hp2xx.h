@@ -76,6 +76,12 @@ copies.
 #define VERS_ADDITIONS "                                 (c) 1999 - 2012 Martin Kroeker\n"
 #endif
 
+
+#include <stdio.h>	//FILE, EOF
+#include "pendef.h"
+#include "bresnham.h"
+
+
 /**
  ** Working with Pure C (the official descendant of Borland's
  ** Turbo C for Atari computers)
@@ -175,8 +181,6 @@ copies.
  **/
 
 /*typedef unsigned char Byte;*/
-
-#include "pendef.h"
 
 /**
  ** When adding your special mode, add a symbol here.
