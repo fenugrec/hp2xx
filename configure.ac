@@ -15,19 +15,17 @@ AC_PROG_CC
 
 # Checks for header files.
 AC_PATH_X
-AC_CHECK_HEADERS([fcntl.h stddef.h stdlib.h string.h sys/time.h unistd.h])
+AC_CHECK_HEADERS([fcntl.h sys/time.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_INLINE
 AC_TYPE_SIZE_T
 AC_TYPE_SSIZE_T
 
-# Checks for library functions.
-AC_FUNC_MALLOC
-AC_FUNC_REALLOC
-
 # math.h : floor, rint, sqrt... Can we assume a C99-compliant math library and just check for just one of these.
 # AC_SEARCH_LIBS can accept multiple extra libs to search, if the default env doesn't provide the given func.
 AC_SEARCH_LIBS(sqrt, m,,AC_MSG_ERROR([problem finding C math lib]))
+
+AC_SEARCH_LIBS(png_get_io_ptr, png, AC_DEFINE([PNG], [], [enable PNG]))
 
 AC_OUTPUT

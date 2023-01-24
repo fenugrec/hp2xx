@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "to_png.h"
 #include <png.h>
+#include <zlib.h>
 
 #define PDNCOL 256
 

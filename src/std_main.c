@@ -34,11 +34,13 @@ copies.
 #include <fcntl.h>
 #include <io.h>
 #endif				/* WIN32 */
+
+#include "config.h"
+
 #include "bresnham.h"
 #include "pendef.h"
 #include "hp2xx.h"
 #include "getopt.h"
-
 
 extern mode_list ModeList[];
 

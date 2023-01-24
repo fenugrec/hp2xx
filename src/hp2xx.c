@@ -153,6 +153,8 @@ copies.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "config.h"
 #include "pendef.h"
 #include "hp2xx.h"
 
